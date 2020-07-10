@@ -51,7 +51,8 @@ function newWordDisplay() {
 		const newWord = randomWord();
 		wordDisplay.textContent = newWord;
 	} catch(err) {
-		gameOver('Congrats, You beat the game!!');
+		if(err.message === 'No words left!!')
+			gameOver('Congrats, You beat the game!!');
 	}
 }
 
